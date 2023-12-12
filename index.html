@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lagu buat kamu</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: url("https://images4.alphacoders.com/132/1327987.png")
+          center/cover no-repeat fixed;
+      }
+
+      #audioPlayer {
+        width: 300px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="audioPlayer">
+      <h2>Lagu Buat Kamu 😘❤</h2>
+      <audio id="myAudio" controls>
+        <source
+          src="Halu - Feby Putri (Official Music Video).mp3"
+          type="audio/mp3"
+        />
+      </audio>
+      <br />
+      <button onclick="playPause()">Play/Pause</button>
+      <button onclick="stopAudio()">Stop</button>
+    </div>
+
+    <script>
+      var myAudio = document.getElementById("myAudio");
+
+      function playPause() {
+        if (myAudio.paused) {
+          myAudio.play();
+        } else {
+          myAudio.pause();
+        }
+      }
+
+      function stopAudio() {
+        myAudio.pause();
+        myAudio.currentTime = 0;
+      }
+    </script>
+  </body>
+</html>
